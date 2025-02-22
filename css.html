@@ -1,0 +1,138 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+
+    body {
+        background: #121212;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .pricing-container {
+        /* This makes cards stack vertically on mobile */
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: 400px; /* Controls card width on mobile */
+    }
+
+    .pricing-card {
+        background: #1E1E1E;
+        border-radius: 15px;
+        padding: 25px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        border: 1px solid #333;
+    }
+
+    .popular {
+        background: linear-gradient(145deg, #1E1E1E, #252525);
+        border: 1px solid #00BA88;
+    }
+
+    .popular::before {
+        content: "POPULAR";
+        position: absolute;
+        top: 20px;
+        right: -35px;
+        background: #00BA88;
+        color: white;
+        padding: 8px 40px;
+        transform: rotate(45deg);
+        font-size: 12px;
+    }
+
+    .plan-name {
+        color: white;
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .price {
+        color: white;
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+
+    .price span {
+        font-size: 14px;
+        color: #888;
+    }
+
+    .description {
+        color: #888;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .features {
+        list-style: none;
+        margin: 20px 0;
+    }
+
+    .features li {
+        color: #DDD;
+        margin: 12px 0;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .features li::before {
+        content: "✓";
+        color: #00BA88;
+        margin-right: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn-plus {
+        background: #333;
+        color: white;
+    }
+
+    .btn-pro {
+        background: #00BA88;
+        color: white;
+    }
+
+    .btn-premium {
+        background: white;
+        color: #121212;
+    }
+
+    .btn:hover {
+        opacity: 0.9;
+    }
+
+    /* This part makes it horizontal on desktop */
+    @media (min-width: 1024px) {
+        .pricing-container {
+            flex-direction: row;
+            max-width: 1200px;
+            gap: 24px;
+        }
+
+        .pricing-card {
+            flex: 1;
+            min-width: 300px;
+        }
+    }
+</style>
