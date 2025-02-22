@@ -18,68 +18,105 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
         }
 
         .payment-container {
             background: #1E1E1E;
             border-radius: 15px;
-            padding: 30px;
+            padding: 20px;
             width: 100%;
-            max-width: 500px;
+            max-width: 350px; /* Reduced container width */
             text-align: center;
             color: white;
         }
 
         .qr-code-container {
             background: white;
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
-            margin: 20px auto;
+            margin: 15px auto;
             width: fit-content;
         }
 
         .qr-code-container img {
-            max-width: 300px;
+            max-width: 200px; /* Reduced QR code size */
             height: auto;
         }
 
         h2 {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #00BA88;
+            font-size: 20px; /* Smaller heading */
         }
 
         p {
-            margin: 15px 0;
+            margin: 12px 0;
             color: #DDD;
+            font-size: 14px; /* Smaller text */
+        }
+
+        .whatsapp-link {
+            color: #25D366;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 12px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-size: 14px; /* Smaller text */
+        }
+
+        .whatsapp-link:hover {
+            transform: scale(1.05);
         }
 
         .back-button {
-            background: #00BA88;
+            background: #333;
             color: white;
-            padding: 15px 30px;
+            padding: 12px 25px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            margin-top: 20px;
-            font-size: 16px;
+            margin-top: 15px;
+            font-size: 14px; /* Smaller button text */
             transition: all 0.3s ease;
         }
 
         .back-button:hover {
             opacity: 0.9;
         }
+
+        /* Additional mobile optimization */
+        @media (max-width: 360px) {
+            .payment-container {
+                padding: 15px;
+            }
+
+            .qr-code-container img {
+                max-width: 180px; /* Even smaller for very small screens */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="payment-container">
         <h2>Scan to Pay</h2>
+        
         <div class="qr-code-container">
-            <!-- Replace "your-phonepe-qr.jpg" with your actual QR code image filename -->
+            <!-- Replace with your PhonePe QR code image -->
             <img src="PaymentQR.png" alt="PhonePe QR Code">
         </div>
-        <p>Scan this QR code using PhonePe app to make payment</p>
-        <p>After successful payment, please contact us on WhatsApp</p>
+
+        <p>Please scan this QR code using PhonePe app</p>
+        
+        <a href="https://wa.me/918467876568?text=Hey, I've made the payment" 
+           class="whatsapp-link" 
+           target="_blank">
+            Please let me know once you've completed the payment
+        </a>
+        
+        <br>
+        
         <button class="back-button" onclick="window.location.href='index.html'">Go Back</button>
     </div>
 </body>
