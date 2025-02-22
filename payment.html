@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #121212;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .payment-container {
+            background: #1E1E1E;
+            border-radius: 15px;
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            color: white;
+        }
+
+        .qr-code-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: fit-content;
+        }
+
+        .qr-code-container img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #00BA88;
+        }
+
+        p {
+            margin: 15px 0;
+            color: #DDD;
+        }
+
+        .back-button {
+            background: #00BA88;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Scan to Pay</h2>
+        <div class="qr-code-container">
+            <!-- Replace "your-phonepe-qr.jpg" with your actual QR code image filename -->
+            <img src="PaymentQR.png" alt="PhonePe QR Code">
+        </div>
+        <p>Scan this QR code using PhonePe app to make payment</p>
+        <p>After successful payment, please contact us on WhatsApp</p>
+        <button class="back-button" onclick="window.location.href='index.html'">Go Back</button>
+    </div>
+</body>
+</html>
