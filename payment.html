@@ -89,11 +89,10 @@
         <h2>Scan to Pay</h2>
         
         <div class="qr-code-container">
-            <!-- Replace with your PhonePe QR code image -->
-            <img src="PaymentQR.png " alt="PhonePe QR Code">
+            <img id="qr-code" src="" alt="PhonePe QR Code">
         </div>
 
-        <p>Make a one-time full payment</p>
+        <p>Stay Secure🔐!</p>
         
         <a href="https://wa.me/918467876568?text=Hey, I've made the payment" 
            class="whatsapp-link" 
@@ -105,5 +104,29 @@
         
         <button class="back-button" onclick="window.location.href='index.html'">Go Back</button>
     </div>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        const plan = getQueryParam('plan');
+        const qrCodeImage = document.getElementById('qr-code');
+
+        switch (plan) {
+            case 'plus':
+                qrCodeImage.src = '5000QR.png';
+                break;
+            case 'pro':
+                qrCodeImage.src = '7000QR.png';
+                break;
+            case 'premium':
+                qrCodeImage.src = '10000QR.png';
+                break;
+            default:
+                qrCodeImage.src = 'defaultQR.png'; // Fallback image
+        }
+    </script>
 </body>
 </html>
